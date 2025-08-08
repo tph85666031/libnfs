@@ -210,6 +210,8 @@ EXTERN struct nfs_context *nfs_init_context(void);
  */
 EXTERN void nfs_destroy_context(struct nfs_context *nfs);
 
+EXTERN int nfs_is_connected(struct nfs_context *nfs);
+
 /*
  * Commands that are in flight are kept on linked lists and keyed by
  * XID so that responses received can be matched with a request.

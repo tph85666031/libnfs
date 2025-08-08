@@ -2771,6 +2771,18 @@ mount_getexports_async(struct rpc_context *rpc, const char *server, rpc_cb cb,
 	return 0;
 }
 
+int nfs_is_connected(struct nfs_context *nfs)
+{
+    if(nfs!=NULL && nfs->rpc!=NULL)
+    {
+         return nfs->rpc->is_connected;
+    }
+    else
+    {
+         return 0;
+    }
+}
+
 struct rpc_context *
 nfs_get_rpc_context(struct nfs_context *nfs)
 {
